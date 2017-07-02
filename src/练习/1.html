@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="button" value="GET" id="btn"/>
+
+<div id="div1">
+13213
+</div>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript">
+  $(function () {
+    $("#btn").click(function () {
+      $.ajax({
+        url:"http://easy-mock.com/mock/59576e889adc231f356f19bc/menu/menu/list",
+        type:"GET",
+        success:function(data){
+          $("#div1").html(data.data)
+        }
+      })
+    })
+  })
+</script>
+
+</body>
+</html>
