@@ -6,9 +6,10 @@ import Select from '@/components/select'
 import Increment from '@/components/increment'
 
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
