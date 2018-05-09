@@ -8,7 +8,13 @@
         <input type="button" value="+" @click="addHandle"/>
         <p>{{num2}}</p>
       </div>
+
+        <router-view></router-view>
     </div>
+
+   
+
+
 </template>
 <script>
 

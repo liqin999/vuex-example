@@ -6,7 +6,7 @@ import axios from 'axios'
 Vue.use(Vuex)
 
 //定义一个容器
-let store=new Vuex.Store({//定义状态已经改变的方法
+let store=new Vuex.Store({//定义状态已经改变的方法。将状态 get mutation action进行拆分
     state:{
       count:100,
       title:"",
@@ -17,6 +17,7 @@ let store=new Vuex.Store({//定义状态已经改变的方法
       return state.count >=120 ? 120 :state.count
     }
   },
+
     mutations:{//唯一一个修改状态的回调函数
       addIncrement(state,payload){//荷载是应该是一个对象可以包含多个字段并记录mutations可读
          state.count+=payload.amount;

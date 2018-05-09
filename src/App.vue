@@ -9,11 +9,13 @@
         下拉框
     </router-link>
 
-    <router-view></router-view>
+    <router-view>
+    </router-view>
   </div>
 </template>
 
 <script>
+//可以使用嵌套的路由的形式上 使用嵌套的路由的形式 
 export default {
   name: 'app'
 }
