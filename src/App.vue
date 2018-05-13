@@ -9,6 +9,10 @@
         下拉框
     </router-link>
 
+     <router-link  to="/Cart" >
+        购物车
+    </router-link>
+
     <router-view>
     </router-view>
   </div>

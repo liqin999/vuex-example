@@ -7,8 +7,7 @@ import Increment from '@/components/increment'
 
 import goods from '@/components/goods'
 import childgoods from '@/components/childgoods'
-
-
+import Cart from '@/components/Cart'
 
 Vue.use(Router);
 
@@ -19,7 +18,13 @@ export default new Router({
       path: '/',
       name: 'Select',
       component: Select
-    },{
+    },
+    {
+      path: '/Cart',
+      name: 'Cart',
+      component: Cart
+    },
+    {
       path: '/Increment',//实现三级嵌套的组件
       name: 'Increment',
       component: Increment,

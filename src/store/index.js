@@ -5,20 +5,53 @@ import axios from 'axios'
 
 Vue.use(Vuex)
 
+
+
+const cartData=[
+    {
+      id:1,
+      num:2
+    },
+    {
+      id:2,
+      num:3
+    }
+  
+]
+
 //定义一个容器
 let store=new Vuex.Store({//定义状态已经改变的方法。将状态 get mutation action进行拆分
     state:{
       count:100,
       title:"",
-      list:[]
+      list:[],
+      cartData
     },
   getters:{
     filterCount(state){
       return state.count >=120 ? 120 :state.count
+    },
+    gettotal(state){
+      return state.cartData.reduce((n,curr)=>{
+          return n+curr.num
+        },0)
     }
   },
 
     mutations:{//唯一一个修改状态的回调函数
+      incrementcart(state,payload){
+        let item = state.cartData.find((item)=>{
+            return item.id === payload.id
+        })
+        item.num +=1;
+      },
+      decrementcart(state,payload){
+        let item = state.cartData.find((item)=>{
+            return item.id === payload.id
+        })
+        item.num -=1;
+      },
+
       addIncrement(state,payload){//荷载是应该是一个对象可以包含多个字段并记录mutations可读
          state.count+=payload.amount;
       },
